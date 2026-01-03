@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\GHLearning.EasyRebusRabbitMQ.Application\GHLearning.EasyRebusRabbitMQ.Application.csproj" />
+		<ProjectReference Include="..\GHLearning.EasyRebusRabbitMQ.Doamin\GHLearning.EasyRebusRabbitMQ.Doamin.csproj" />
+		<ProjectReference Include="..\GHLearning.EasyRebusRabbitMQ.Infrastructure\GHLearning.EasyRebusRabbitMQ.Infrastructure.csproj" />
+		<ProjectReference Include="..\GHLearning.EasyRebusRabbitMQ.SharedKernel\GHLearning.EasyRebusRabbitMQ.SharedKernel.csproj" />
+	</ItemGroup>
+
+</Project>
