@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.1" />
+		<PackageReference Include="Rebus" Version="8.9.0" />
+		<PackageReference Include="Rebus.RabbitMq" Version="10.1.0" />
+		<PackageReference Include="Rebus.ServiceProvider" Version="10.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\GHLearning.EasyRebusRabbitMQ.Doamin\GHLearning.EasyRebusRabbitMQ.Doamin.csproj" />
+	</ItemGroup>
+
+</Project>

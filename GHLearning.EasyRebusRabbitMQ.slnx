@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/GHLearning.EasyRebusRabbitMQ.Application/GHLearning.EasyRebusRabbitMQ.Application.csproj" />
+    <Project Path="src/GHLearning.EasyRebusRabbitMQ.Doamin/GHLearning.EasyRebusRabbitMQ.Doamin.csproj" />
+    <Project Path="src/GHLearning.EasyRebusRabbitMQ.Infrastructure/GHLearning.EasyRebusRabbitMQ.Infrastructure.csproj" />
+    <Project Path="src/GHLearning.EasyRebusRabbitMQ.SharedKernel/GHLearning.EasyRebusRabbitMQ.SharedKernel.csproj" />
+    <Project Path="src/GHLearning.EasyRebusRabbitMQ.WebApi/GHLearning.EasyRebusRabbitMQ.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/GHLearning.EasyRebusRabbitMQ.ApplicationTests/GHLearning.EasyRebusRabbitMQ.ApplicationTests.csproj" Id="d877d09e-47a8-487c-bfea-d554246df637" />
+    <Project Path="tests/GHLearning.EasyRebusRabbitMQ.DoaminTests/GHLearning.EasyRebusRabbitMQ.DoaminTests.csproj" Id="b74e535d-4a7c-4c07-8760-8b074eb9745b" />
+  </Folder>
+</Solution>
