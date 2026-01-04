@@ -3,8 +3,10 @@ using GHLearning.EasyRebusRabbitMQ.Doamin.Events;
 using GHLearning.EasyRebusRabbitMQ.Infrastructure;
 using GHLearning.EasyRebusRabbitMQ.Infrastructure.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using Rebus.Bus;
 using Rebus.Config;
 using Rebus.Routing.TypeBased;
+using Rebus.ServiceProvider;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,11 @@ builder.Services.AddInfrastructure((sp, options) => options.UseSqlite(builder.Co
 
 // Rebus
 var rabbitUri = builder.Configuration.GetConnectionString("RabbitMQ");
+
+builder.Services.AddRebus(configure => configure
+	.Transport(t => t.UseRabbitMq(rabbitUri, "notification_service")),
+	isDefaultBus: false,
+	key: "notification_service_bus");
 
 builder.Services.AddRebus(configure => configure
 	.Transport(t => t.UseRabbitMq(rabbitUri, "notification_queue"))
@@ -68,5 +75,11 @@ app.UseAuthorization();
 app.UseHttpsRedirection();
 
 app.MapControllers();
-
+/*
+app.Lifetime.ApplicationStarted.Register(() =>
+{
+	var bus = app.Services.GetRequiredService<IBusRegistry>().GetBus("notification_service_bus");
+	bus.Subscribe<NotificationSentEvent>().Wait();
+});
+*/
 app.Run();

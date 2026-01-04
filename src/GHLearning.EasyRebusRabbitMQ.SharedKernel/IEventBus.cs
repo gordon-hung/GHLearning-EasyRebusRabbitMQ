@@ -8,16 +8,7 @@
 		/// <typeparam name="TEvent">The type of the event.</typeparam>
 		/// <param name="event">The event.</param>
 		/// <returns></returns>
-		Task PublishAsync<TEvent>(TEvent @event) where TEvent : class;
-
-		/// <summary>
-		/// Sends the asynchronous.
-		/// </summary>
-		/// <typeparam name="TEvent">The type of the event.</typeparam>
-		/// <param name="destinationQueue">The destination queue.</param>
-		/// <param name="event">The event.</param>
-		/// <returns></returns>
-		Task SendAsync<TEvent>(string destinationQueue, TEvent @event) where TEvent : class;
+		Task PublishAsync<TEvent>(string key, TEvent @event) where TEvent : class;
 
 		/// <summary>
 		/// Sends the asynchronous.

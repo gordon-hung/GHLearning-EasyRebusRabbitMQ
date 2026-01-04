@@ -39,7 +39,7 @@ internal sealed class NotificationService : INotificationService
 		// 發送 Rebus 事件
 		var domainEvent = new NotificationSentEvent(notification.Id, notification.Title, notification.Message);
 		await _bus.SendAsync("notification_bus", "notification_queue", domainEvent).ConfigureAwait(ConfigureAwaitOptions.None);
-
+		await _bus.PublishAsync("notification_service_bus", domainEvent).ConfigureAwait(ConfigureAwaitOptions.None);
 		return notification.Id;
 	}
 

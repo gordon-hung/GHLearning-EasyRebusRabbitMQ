@@ -12,11 +12,8 @@ internal sealed class RebusEventBus : IEventBus
 		_busRegistry = busRegistry;
 	}
 
-	public Task PublishAsync<TEvent>(TEvent @event) where TEvent : class
-		=> _busRegistry.GetBus(null).Publish(@event);
-
-	public Task SendAsync<TEvent>(string destinationQueue, TEvent @event) where TEvent : class
-		=> _busRegistry.GetBus(null).Advanced.Routing.Send(destinationQueue, @event);
+	public Task PublishAsync<TEvent>(string key, TEvent @event) where TEvent : class
+		=> _busRegistry.GetBus(key).Publish(@event);
 
 	public Task SendAsync<TEvent>(string key, string destinationQueue, TEvent @event) where TEvent : class
 		=> _busRegistry.GetBus(key).Advanced.Routing.Send(destinationQueue, @event);
